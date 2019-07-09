@@ -1,0 +1,39 @@
+<div class="card card-body">
+  <h3>Edit Item Details</h3>
+  <form action="/inventory/{{inventory.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="form-group">
+      <label for="productId">Product ID</label>
+      <input type="text" class="form-control" name="productId" required value="{{inventory.productId}}">
+    </div>
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input type="text" class="form-control" name="productName" required value="{{inventory.productName}}">
+    </div>
+    <div class="form-group">
+      <label for="vendor">Vendor</label>
+      <input type="text" class="form-control" name="vendor" required value="{{inventory.vendor}}">
+    </div>
+    <div class="form-group">
+      <label for="mrp">MRP</label>
+      <input type="text" class="form-control" name="mrp" required value="{{inventory.mrp}}">
+    </div>
+    <div class="form-group">
+      <label for="batchNum">Batch Number</label>
+      <input type="text" class="form-control" name="batchNum" required value="{{inventory.batchNum}}">
+    </div>
+    <div class="form-group">
+      <label for="batchDate">Batch Date</label>
+      <input type="date" class="form-control" name="batchDate" required value="{{inventory.batchDate}}">
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="text" class="form-control" name="quantity" required value="{{inventory.quantity}}">
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" class="form-control" name="status" required value="{{inventory.status}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

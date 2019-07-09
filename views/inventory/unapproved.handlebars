@@ -1,0 +1,23 @@
+<h1>Unapproved cart items</h1>
+{{!-- <a href="/inventory" class="btn btn-primary">Back to Complete Inventory</a> --}}
+<a href="/inventory"><i class="fas fa-long-arrow-alt-left">Complete Inventory</i></a>
+
+{{#each ideas}}
+<div class="card card-body mb-2">
+  <p><strong>ID:</strong> {{productId}}</p>
+  <p><strong>Name:</strong> {{productName}}</p>
+  <p><strong>Vendor:</strong> {{vendor}}</p>
+  <p><strong>MRP:</strong> {{mrp}}</p>
+  <p><strong>BatchNum:</strong> {{batchNum}}</p>
+  <p><strong>BatchDate(yyyy-mm-dd):</strong> {{batchDate}}</p>
+  <p><strong>Qunatity:</strong> {{quantity}}</p>
+  <p><strong>Status:</strong> {{status}}</p>
+  <a class="btn btn-dark btn-block" href="/inventory/edit/{{id}}">Edit</a>
+  <form method="post" action="/inventory/{{id}}?_method=DELETE">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" class="btn btn-danger btn-block mt-2" value="Delete">
+  </form>
+</div>
+{{else}}
+<p>No items are Present</p>
+{{/each}}
